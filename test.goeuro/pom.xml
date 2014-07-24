@@ -6,13 +6,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<build>
-		<plugins>
-			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-jar-plugin</artifactId> 
-				<configuration> <archive> <manifest> <addClasspath>true</addClasspath> <mainClass>main.GoEuroTest</mainClass> 
-				</manifest> </archive> </configuration> </plugin> -->
-			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-assembly-plugin</artifactId> 
-				<configuration> <archive> <manifest> <mainClass>main.GoEuroTest</mainClass> 
-				</manifest> </archive> </configuration> </plugin> -->
+		<plugins>		
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<executions>
@@ -28,11 +22,12 @@
 						<manifest>
 							<mainClass>main.GoEuroTest</mainClass>
 						</manifest>
-					</archive>
-					<finalName>GoEuroTest</finalName>
+					</archive>					
 					<descriptorRefs>
 						<descriptorRef>jar-with-dependencies</descriptorRef>
 					</descriptorRefs>
+					<finalName>GoEuroTest</finalName>
+					<appendAssemblyId>false</appendAssemblyId>
 				</configuration>
 			</plugin>
 		</plugins>

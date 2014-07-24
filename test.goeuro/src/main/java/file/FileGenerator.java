@@ -10,8 +10,8 @@ public class FileGenerator {
 
 	private static final String FILE_NAME = "GoEuroTest.csv";
 
-	private static final String CSV_FILE_HEADER = "_id,name,type,latitude,longitude\n";
-	
+	private static final String CSV_FILE_HEADER = "_type,_id,name,type,latitude,longitude\n";
+
 	public void generateCsvFile(List<Position> positionList) {
    
 		try {
@@ -20,6 +20,8 @@ public class FileGenerator {
 			writer.append(CSV_FILE_HEADER);
 
 			for (Position position : positionList) {
+				writer.append(position.getFirstType()+"");
+				writer.append(",");
 				writer.append(position.getId()+"");
 				writer.append(",");
 				writer.append(position.getName());
@@ -34,8 +36,9 @@ public class FileGenerator {
 
 			writer.flush();
 			writer.close();
+			System.out.println("File "+ FILE_NAME +" created/updated successfully in this folder.");
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Error writing on file "+e.getMessage());
 		}
 	}
 

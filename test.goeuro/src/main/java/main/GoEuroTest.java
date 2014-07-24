@@ -15,7 +15,6 @@ public class GoEuroTest {
 		try {			
 			if (args.length >= 1) {
 				String input = args[0];
-				System.out.println(input);
 				FileGenerator fileGenerator = new FileGenerator();
 				PositionManager positionManager = new PositionManager();
 				URL url = new URL(SERVICE_URL + input);

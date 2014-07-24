@@ -39,8 +39,7 @@ public class PositionManager {
 			httpConnection.disconnect();
 
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Error getting positions from Url "+e.getMessage());
 		}
 
 		return positions;
